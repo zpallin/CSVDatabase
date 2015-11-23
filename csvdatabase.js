@@ -46,10 +46,10 @@ function resultObject (columns,row) {
 
 ////////////////////////////////////////////////////////////////////////////
 function searchCSV (csvData,searchString) {
-  if (typeof csvData === 'undefined')
+  if (typeof csvData === 'undefined' || csvData === null)
     throw new Error("CSV is undefined. Try using --csvdata");
 
-  if (typeof searchString === 'undefined')
+  if (typeof searchString === 'undefined' || searchString === null)
     throw new Error("Search is undefined. Try use --search");
 
   if (csvData.split("\n").length < 2)
@@ -87,11 +87,13 @@ function searchCSV (csvData,searchString) {
 }
 
 ////////////////////////////////////////////////////////////////////////////
-fs.readFile(csvFilePath,"utf8",function(err,data){
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
-  console.log(searchCSV(data,argv.search));
-});
+if (argv.help !== true) {
+  fs.readFile(csvFilePath,"utf8",function(err,data){
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+    console.log(searchCSV(data,argv.search));
+  });
+}
 
