@@ -1,0 +1,20 @@
+{
+  "arguments": [
+    {
+      "full": "csvfile",
+      "short": "c",
+      "value": true,
+      "description": "Take parameter of csv file"
+    },
+    {
+      "full": "search",
+      "short": "s",
+      "value": true,
+      "description": "Take a search string as key=value"
+    }
+  ],
+  "defaults": {
+    "help": true,
+    "helpExtras": "CSVDatabase"
+  }
+}

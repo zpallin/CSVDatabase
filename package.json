@@ -1,0 +1,9 @@
+{
+  "name": "CSVDatabase",
+  "version": "0.1.0",
+  "description": "CSV Database Tool",
+  "main": "csvdatabase.js",
+  "dependencies": {
+    "node-argument-parser": "*"
+  }
+}
